@@ -3,4 +3,5 @@ image:
 test-job:
     stage: test
     script:
+        - pip install flask
         - python -m unittest -v tests/appTest.py 
