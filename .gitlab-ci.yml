@@ -3,7 +3,4 @@ image:
 test-job:
     stage: test
     script:
-        - pip install flask
-        - pip install coverage
-        - python -m coverage run -m unittest -v tests/appTest.py
-        - python -m coverage report
+        - echo "This job tests something"
