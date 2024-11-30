@@ -1,6 +1,6 @@
 # Flask App e PyUnit
 
-Repositório base para o desenvolvimento de um pipeline que execute testes unitários no Gitlab.
+Repositório base para o desenvolvimento de um pipeline que execute testes unitários, testes de segurança (SAST) e simulação de um deploy com aprovação manual, no Gitlab.
 
 # O Arquivo .gitlab-ci.yml
 
@@ -24,7 +24,7 @@ test-job:
 Alterar o arquivo .gitlab-ci.yml, contemplando a execução dos testes unitários com cobertura de 100%.
 
 ### Continuos Deployement
-Alterar o arquivo .gitlab-ci.yml, simulando uma implantação com aprovação manual em um stage de "deploy".
+Alterar o arquivo .gitlab-ci.yml, executando testes de segurança (SAST) e sisimulação de uma implantação com aprovação manual em um stage de "deploy".
 
 ## Executando a aplicação
 
