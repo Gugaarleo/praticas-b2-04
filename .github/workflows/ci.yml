@@ -30,3 +30,8 @@ jobs:
     steps:
       - name: Teste 2
         run: echo "This job tests something 2"
+
+build-job:
+  stage: build
+  script:
+  - echo "Olá, $GITHUB_USER_LOGIN!"
