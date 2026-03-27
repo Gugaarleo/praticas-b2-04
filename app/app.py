@@ -1,4 +1,5 @@
 from flask import Flask, request
+from markupsafe import escape
 
 app = Flask(__name__)
 
@@ -13,8 +14,8 @@ def hello():
     if not name:
         return "Nome não informado", 400
     else:
-        return f"Hello, {name}!"
+        return f"Hello, {escape(name)}!"
 
 if __name__ == "__main__": # pragma: no cover
-    app.run(debug=True)
+    app.run(debug=False)
     #app.run(host='0.0.0.0')
