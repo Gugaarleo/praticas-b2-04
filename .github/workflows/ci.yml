@@ -31,23 +31,23 @@ jobs:
       - name: Teste 2
         run: echo "This job tests something 2"
 
-semgrep-sast:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Checkout do código
-      uses: actions/checkout@v4
+  semgrep-sast:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
 
-    - name: Executar Semgrep SAST
+      - name: Executar Semgrep SAST
       # Utiliza a imagem oficial do Semgrep para escanear o código
-      run: |
-        docker run --rm -v $(pwd):/src returntocorp/semgrep semgrep scan --json --output=gl-sast-report.json
+        run: |
+          docker run --rm -v $(pwd):/src returntocorp/semgrep semgrep scan --json --output=gl-sast-report.json
 
-    - name: Upload do Relatório SAST
-      uses: actions/upload-artifact@v4
-      with:
-        name: sast-report
-        path: gl-sast-report.json
-      if: always() # Garante que o relatório seja salvo mesmo se encontrar falhas
+      - name: Upload do Relatório SAST
+        uses: actions/upload-artifact@v4
+        with:
+          name: sast-report
+          path: gl-sast-report.json
+        if: always() # Garante que o relatório seja salvo mesmo se encontrar falhas
 
   check-sast-report:
     runs-on: ubuntu-latest
