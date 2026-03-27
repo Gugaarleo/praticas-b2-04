@@ -32,6 +32,7 @@ jobs:
         run: echo "This job tests something 2"
 
   build-job:
-    stage: build
-    script:
-    - echo "Olá, $GITHUB_USER_LOGIN!"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Executar o build
+        run: echo "Olá, ${{ github.actor }}!"
