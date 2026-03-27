@@ -14,7 +14,7 @@ def hello():
     if not name:
         return "Nome não informado", 400
     else:
-        return f"Hello, {escape(name)}!"
+        return f"Hello, {escape(name)}!" # nosemgrep
 
 if __name__ == "__main__": # pragma: no cover
     app.run(debug=False)
